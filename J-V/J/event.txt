@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 style="font-family: cansolas; text-align: center;"> Move mouse over below patch to change color</h3>
+    <div onmouseover="this.style.background = 'teal'" 
+         onmouseout="this.style.background = 'aquamarine'"
+         style=" margin: auto; width: 300px; height:300px; background-color: aquamarine;" >
+    </div><br><br>
+    <a  href="#" 
+        onfocus="this.style.color = 'green'"
+        onblur = "this.style.color = 'purple'"
+        style="color:blue"
+        target="_self">Click this link and then return to this page and click the patch</a>
+</body>
+</html>

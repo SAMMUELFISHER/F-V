@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr><td>Enter Object Fields separated by space</td> <td><input type="text" id="f"></td></tr>
+        <tr><td><button onclick="showf()">Show Fields</button></td><td><div id="sf"></div></td></tr>
+        <tr><td><br></td></tr>
+        <tr><td>Enter Object Values separated by space</td> <td><input type="text" id="v"></td></tr>
+        <tr><td><button onclick="showo()">Show Object</button></td><td><div id="so"></div></td></tr>
+        <tr><td><br></td></tr>
+        <tr><td><button onclick="check()">Check if object is an Array Object</button></td><td><div id="ia"></div></td></tr>
+    </table>
+    <script>
+        let arro = [];
+        let obj,f;
+        function showf(){
+            f = document.getElementById('f').value; 
+            f = f.split(" ");
+            document.getElementById('sf').innerHTML = Object.values(f);
+        }
+        function showo(){
+            let v = document.getElementById('v').value;
+            v = v.split(" ");
+            let str = "";
+            for(let i in f){
+                if(i < f.length -1) str += f[i] + " : " + v[i] + " ,";
+                else   str += f[i] + " : " + v[i];
+            }
+            obj = {str};
+            arro.push(obj);
+            str ="";
+            for(let i in arro){
+                if(i < arro.length -1) str += "[\n{"+ Object.values(arro[i])+"},\n";
+                else  str += "{"+ Object.values(arro[i])+"}\n]";
+            }
+            document.getElementById('so').innerHTML = str;
+        }
+        function check(){
+            if(Array.isArray(arro)) document.getElementById('ia').innerHTML = "Given object is an Array";
+            else document.getElementById('ia').innerHTML = "Given object is not an Array";
+        }
+    </script>
+</body>
+</html>
